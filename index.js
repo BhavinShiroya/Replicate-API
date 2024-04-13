@@ -2,12 +2,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const Replicate = require("replicate");
-const cors = require('cors'); // Import the cors middleware
+//import Replicate from "replicate";
 
 // Create an Express app
 const app = express();
 const port = 3001;
-app.use(cors());
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
