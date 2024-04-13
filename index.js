@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const Replicate = require("replicate");
+require('dotenv').config();
 //import Replicate from "replicate";
 
 // Create an Express app
@@ -14,10 +15,11 @@ app.use(bodyParser.json());
 // Endpoint for handling POST requests
 app.post("/fetch-data", async (req, res) => {
   try {
+    const myVariable = process.env.MY_VARIABLE;
     // Assuming the request body contains necessary parameters for fetching data from the external API
     const { promt } = req.body;
     const replicate = new Replicate({
-      auth: 'r8_VwPbKnlKmx2CwpKCeS5dKvXDbRd9I1w0Dzf3x',
+      auth: myVariable,
     });
     console.log("*************", req.body);
 
